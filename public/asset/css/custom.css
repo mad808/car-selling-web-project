@@ -1,0 +1,148 @@
+/*
+===================================================================
+ TOÝ PLATFORM - ADMIN PANEL STYLES V4 (FINAL & COMPLETE)
+ - Combines CSS Variables, Fixed Sidebar, Fixed Topbar, & Loader
+===================================================================
+*/
+
+/* 1. BRAND THEME (using CSS Variables) */
+:root {
+    --brand-primary: #9c122c;
+    --brand-primary-rgb: 156, 18, 44;
+    --brand-primary-hover: #b81534; /* A slightly lighter shade for hover effects */
+}
+
+/* 2. BOOTSTRAP OVERRIDES & LAYOUT BASE */
+body {
+    background-color: #f8f9fc;
+    --bs-primary: var(--brand-primary);
+    --bs-primary-rgb: var(--brand-primary-rgb);
+    --bs-link-color: var(--brand-primary);
+    --bs-link-color-rgb: var(--brand-primary-rgb);
+    --bs-link-hover-color: var(--brand-primary-hover);
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* 3. COMPONENT-SPECIFIC OVERRIDES */
+.btn-primary {
+    --bs-btn-bg: var(--brand-primary);
+    --bs-btn-border-color: var(--brand-primary);
+    --bs-btn-hover-bg: var(--brand-primary-hover);
+    --bs-btn-hover-border-color: var(--brand-primary-hover);
+    --bs-btn-active-bg: color-mix(in srgb, var(--brand-primary) 90%, black);
+    --bs-btn-active-border-color: color-mix(in srgb, var(--brand-primary) 90%, black);
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link { background-color: var(--brand-primary); }
+.text-primary { color: var(--brand-primary) !important; }
+.border-left-primary { border-left: .25rem solid var(--brand-primary) !important; }
+
+/* 4. SB ADMIN 2 LAYOUT STYLES (UPDATED & FINAL) */
+
+/* Sidebar */
+#sidebar {
+    width: 280px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: margin .25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+#sidebar.toggled { margin-left: -280px; }
+#sidebar .sidebar-brand { height: 4.375rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; text-decoration: none; color: #fff; }
+#sidebar .nav-item .nav-link { padding: .75rem 1.25rem; color: rgba(255, 255, 255, .8); display: block; width: 100%; text-align: left; }
+#sidebar .nav-item .nav-link i { font-size: .85rem; margin-right: .5rem; }
+#sidebar .nav-item .nav-link:hover { background-color: rgba(255, 255, 255, .1); color: #fff; }
+#sidebar .nav-item.active .nav-link { font-weight: 700; color: #fff; background-color: var(--brand-primary); }
+.sidebar-heading { padding: .5rem 1.25rem; font-size: .75rem; color: rgba(255, 255, 255, .4); text-transform: uppercase; }
+.sidebar-divider { margin: 1rem 1rem; border-top: 1px solid rgba(255, 255, 255, .15); }
+.sidebar-footer { margin-top: auto; padding: 1rem; text-align: center; font-size: 0.8em; color: rgba(255, 255, 255, 0.4); }
+
+/* Content Wrapper */
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: 280px;
+    transition: margin .25s ease-in-out;
+    padding-top: 4.375rem; /* Push content below the fixed topbar */
+}
+#sidebar.toggled + #content-wrapper {
+    margin-left: 0;
+}
+
+/* Topbar - UPDATED FOR FIXED POSITION */
+#topbar {
+    height: 4.375rem;
+    background-color: #fff;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 280px; /* Start after the sidebar */
+    z-index: 999; /* Below sidebar but above content */
+    transition: left .25s ease-in-out;
+}
+#sidebar.toggled + #content-wrapper #topbar {
+    left: 0; /* Expand to full width when sidebar is hidden */
+}
+.topbar-divider { width: 0; border-right: 1px solid #e3e6f0; height: calc(4.375rem - 2rem); margin: auto 1rem; }
+
+/* User Avatar Styles */
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--brand-primary);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* Cards */
+.card-header { background-color: #f8f9fc; border-bottom: 1px solid #e3e6f0; font-weight: 700; }
+.card-icon { font-size: 1.5rem; color: #dddfeb; }
+
+/*
+===================================================================
+ 5. PAGE LOADER STYLES
+===================================================================
+*/
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fc;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+#page-loader .loader-logo img {
+    width: 80px;
+    height: auto;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+#page-loader.loader-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
