@@ -18,7 +18,7 @@ return [
     'ADMIN PANEL' => 'ADMIN PANEL',
     'logout' => 'Çykmak',
     'Discover your next vehicle with confidence.' => 'Indiki maşynyňyzy ygtybarlylyk bilen tapyň.',
-    'Find Your Dream Car' => 'Arzuňyzdaky awtoulagy tapyň',
+    'Find Your Dream Car' => 'Arzuwňyzdaky awtoulagy tapyň',
     'Simple. Fast. Reliable.' => 'Sada. Çalt. Ygtybarly.',
     'Keywords' => 'Açar sözler',
     'Brand' => 'Marka',
