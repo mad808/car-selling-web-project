@@ -68,6 +68,7 @@
                 </p>
                 <!-- Social Icons -->
                 <div class="d-flex">
+                    <a href="https://github.com/mad808/car-selling-web-project/tree/main" target="_blank" class="social-btn" title="GitHub Repository"><i class="bi bi-github"></i></a>
                     <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="social-btn"><i class="bi bi-telegram"></i></a>
                     <a href="#" class="social-btn"><i class="bi bi-tiktok"></i></a>
@@ -82,6 +83,8 @@
                     <li><a href="{{ route('cars.create') }}" class="footer-link">{{ __('site.sell_car') }}</a></li>
                     <li><a href="{{ route('about') }}" class="footer-link">{{ __('site.about') }}</a></li>
                     <li><a href="{{ route('login') }}" class="footer-link">{{ __('site.login') }} / {{ __('site.register') }}</a></li>
+                    <!-- Added GitHub Project Link -->
+                    <li><a href="https://github.com/mad808/car-selling-web-project/tree/main" target="_blank" class="footer-link text-info"><i class="bi bi-git me-1"></i> {{ __('site.source_code') ?? 'GitHub Source' }}</a></li>
                 </ul>
             </div>
 
@@ -127,6 +130,7 @@
                 <p class="mb-0 small">&copy; {{ date('Y') }} <strong>Ulagym</strong>. {{ __('site.All rights reserved.') }}</p>
             </div>
             <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                <a href="https://github.com/mad808/car-selling-web-project/tree/main" target="_blank" class="text-light small text-decoration-none me-3"><i class="bi bi-github"></i> View Project</a>
                 <a href="#" class="text-light small text-decoration-none me-3">{{ __('site.Privacy Policy') }}</a>
                 <a href="#" class="text-light small text-decoration-none">{{ __('site.Terms of Service') }}</a>
             </div>
