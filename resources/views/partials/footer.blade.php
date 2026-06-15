@@ -84,8 +84,7 @@
                     <li><a href="{{ route('about') }}" class="footer-link">{{ __('site.about') }}</a></li>
                     <li><a href="{{ route('login') }}" class="footer-link">{{ __('site.login') }} / {{ __('site.register') }}</a></li>
                     <!-- Added GitHub Project Link -->
-                    <li><a href="https://github.com/mad808/car-selling-web-project/tree/main" target="_blank" class="footer-link text-info"><i class="bi bi-git me-1"></i> {{ __('site.source_code') ?? 'GitHub Source' }}</a></li>
-                </ul>
+                 </ul>
             </div>
 
             <!-- Column 3: Contact Info -->
