@@ -6,7 +6,7 @@
     /* --- HERO SECTION --- */
     .hero-wrapper {
         position: relative;
-        height: 600px;
+        height: 560px;
         overflow: hidden;
     }
 
@@ -16,7 +16,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.72) 100%);
         z-index: 2;
     }
 
@@ -25,12 +25,11 @@
         height: 100%;
         object-fit: cover;
         transform: scale(1);
-        transition: transform 10s ease;
-        /* Subtle Zoom Effect */
+        transition: transform 8s ease;
     }
 
     .active .hero-img {
-        transform: scale(1.1);
+        transform: scale(1.08);
     }
 
     .hero-content {
@@ -40,34 +39,31 @@
         transform: translate(-50%, -50%);
         z-index: 3;
         text-align: center;
-        width: 100%;
+        width: 90%;
+        max-width: 850px;
     }
 
-    /* --- GLASSMOPHISM SEARCH BAR --- */
+    /* --- GLASSMORPHISM SEARCH BAR --- */
     .search-container {
         position: relative;
         z-index: 10;
-        margin-top: -60px;
-        /* Pulls it up into the hero */
+        margin-top: -55px;
     }
 
     .search-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         border-radius: 100px;
-        /* Pill shape on desktop */
-        padding: 10px;
+        padding: 10px 14px;
     }
 
-    /* Mobile Search Adjustments */
     @media (max-width: 992px) {
         .search-card {
             border-radius: 20px;
-            /* Box shape on mobile */
             padding: 20px;
-            margin-top: -100px;
+            margin-top: -85px;
         }
 
         .search-divider {
@@ -84,7 +80,7 @@
     }
 
     .search-label {
-        font-size: 0.75rem;
+        font-size: 0.73rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -94,8 +90,8 @@
     }
 
     .search-divider {
-        border-right: 1px solid #ddd;
-        height: 40px;
+        border-right: 1px solid #e9ecef;
+        height: 38px;
         margin: auto 0;
     }
 
@@ -103,48 +99,64 @@
     .listing-card {
         border: none;
         border-radius: 16px;
-        background: #fff;
+        background: #ffffff;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         height: 100%;
+        overflow: hidden;
     }
 
     .listing-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-6px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
     }
 
     .img-hover-zoom {
-        height: 240px;
+        height: 220px;
         overflow: hidden;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
         position: relative;
+        background-color: #f1f3f5;
     }
 
     .img-hover-zoom img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.45s ease;
     }
 
     .listing-card:hover .img-hover-zoom img {
-        transform: scale(1.08);
+        transform: scale(1.06);
     }
 
     /* Badges */
     .badge-year {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        background: rgba(255, 255, 255, 0.9);
-        color: #000;
+        top: 12px;
+        right: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        color: #111;
         font-weight: 700;
-        padding: 5px 12px;
+        padding: 4px 10px;
         border-radius: 30px;
-        font-size: 0.85rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-size: 0.8rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        z-index: 2;
+    }
+
+    .badge-ai {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(13, 110, 253, 0.9);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 30px;
+        font-size: 0.72rem;
+        letter-spacing: 0.4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 2;
     }
 
     .badge-price {
@@ -154,15 +166,16 @@
         letter-spacing: -0.5px;
     }
 
-    /* Attributes (Icons) */
+    /* Attributes Grid */
     .attr-grid {
         display: flex;
-        gap: 15px;
-        font-size: 0.85rem;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.82rem;
         color: #6c757d;
-        margin-top: 10px;
-        border-top: 1px solid #f0f0f0;
-        padding-top: 12px;
+        margin-top: 8px;
+        border-top: 1px solid #f1f3f5;
+        padding-top: 10px;
     }
 </style>
 
@@ -173,11 +186,16 @@
         @foreach($banners as $key => $banner)
         <div class="carousel-item {{ $key == 0 ? 'active' : '' }} h-100">
             <div class="hero-overlay"></div>
-            <img src="{{ asset('storage/' . $banner->image_path) }}" class="hero-img" alt="Hero Banner">
+            
+            @php
+                $fallbackBanner = asset('asset/img/cars/2.png');
+                $bannerImg = !empty($banner->image_path) ? asset('storage/' . $banner->image_path) : $fallbackBanner;
+            @endphp
+            <img src="{{ $bannerImg }}" class="hero-img" alt="Hero Banner" onerror="this.onerror=null; this.src='{{ $fallbackBanner }}';">
 
             @if($banner->title)
             <div class="hero-content">
-                <h1 class="display-3 fw-bolder text-white mb-2" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                <h1 class="display-4 fw-bolder text-white mb-2" style="text-shadow: 0 4px 16px rgba(0,0,0,0.5);">
                     {{ $banner->title }}
                 </h1>
                 <p class="lead text-white-50 fw-normal">{{ __('site.Discover your next vehicle with confidence.') }}</p>
@@ -190,8 +208,8 @@
 @else
 <!-- Fallback Hero if no banners -->
 <div class="hero-wrapper bg-dark d-flex align-items-center justify-content-center">
-    <div class="text-center text-white">
-        <h1 class="display-4 fw-bold">{{ __('site.Find Your Dream Car') }}</h1>
+    <div class="text-center text-white px-3">
+        <h1 class="display-4 fw-bold mb-2">{{ __('site.Find Your Dream Car') }}</h1>
         <p class="lead text-white-50">{{ __('site.Simple. Fast. Reliable.') }}</p>
     </div>
 </div>
@@ -236,7 +254,7 @@
 
                         <!-- Search Button -->
                         <div class="col-lg-2">
-                            <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold shadow-sm">
+                            <button type="submit" class="btn btn-primary w-100 rounded-pill py-2.5 fw-bold shadow-sm">
                                 {{ __('site.Search') }}
                             </button>
                         </div>
@@ -261,40 +279,61 @@
     <!-- 4. CARS GRID -->
     <div class="row g-4">
         @forelse($cars as $car)
+        @php
+            // Safe Local Asset Fallback for Image
+            $fallbackImg = asset('asset/img/cars/2.png');
+            $carImg = $fallbackImg;
+            
+            if (!empty($car->image)) {
+                if (str_starts_with($car->image, 'http')) {
+                    $carImg = $car->image;
+                } elseif (file_exists(public_path($car->image))) {
+                    $carImg = asset($car->image);
+                } elseif (file_exists(public_path('asset/img/' . $car->image))) {
+                    $carImg = asset('asset/img/' . $car->image);
+                } elseif (file_exists(public_path('storage/' . $car->image))) {
+                    $carImg = asset('storage/' . $car->image);
+                }
+            }
+        @endphp
+
         <div class="col-md-6 col-lg-3">
             <div class="card listing-card position-relative">
 
                 <!-- Image Area -->
                 <div class="img-hover-zoom">
-                    @if($car->image)
-                    <img src="{{ asset('storage/' . $car->image) }}" alt="{{ $car->title }}">
-                    @else
-                    <img src="https://via.placeholder.com/400x300?text=No+Photo" alt="Placeholder">
+                    <!-- AI Verdict Badge if exists -->
+                    @if(!empty($car->ai_verdict))
+                        <span class="badge-ai">
+                            <i class="bi bi-robot me-1"></i>{{ $car->ai_verdict }}
+                        </span>
                     @endif
+
+                    <img src="{{ $carImg }}" alt="{{ $car->title }}" loading="lazy" onerror="this.onerror=null; this.src='{{ $fallbackImg }}';">
                     <span class="badge-year">{{ $car->year }}</span>
                 </div>
 
                 <!-- Content Area -->
-                <div class="card-body p-3 pt-4">
+                <div class="card-body p-3 pt-3">
                     <!-- Brand -->
-                    <div class="text-uppercase text-muted fw-bold" style="font-size: 0.75rem; letter-spacing: 1px;">
+                    <div class="text-uppercase text-muted fw-bold" style="font-size: 0.72rem; letter-spacing: 0.8px;">
                         {{ $car->brand->name ?? 'Car' }}
                     </div>
 
                     <!-- Title -->
-                    <h5 class="card-title fw-bold text-dark mt-1 mb-2 text-truncate">
-                        {{ $car->model }} <span class="fw-normal text-secondary">{{ \Illuminate\Support\Str::limit($car->title, 15) }}</span>
+                    <h5 class="card-title fw-bold text-dark mt-1 mb-2 text-truncate" title="{{ $car->title }}">
+                        {{ $car->model }} <span class="fw-normal text-secondary">{{ \Illuminate\Support\Str::limit($car->title, 16) }}</span>
                     </h5>
 
                     <!-- Price -->
-                    <div class="badge-price mb-3">
+                    <div class="badge-price mb-2">
                         {{ number_format($car->price) }} <small class="fs-6 fw-normal text-dark">TMT</small>
                     </div>
 
                     <!-- Attributes Grid -->
                     <div class="attr-grid">
-                        <div><i class="bi bi-calendar3 me-1"></i> {{ $car->created_at->format('M d') }}</div>
-                        <div><i class="bi bi-person-circle me-1"></i> {{ __('site.Seller') }} </div>
+                        <span><i class="bi bi-calendar3 me-1"></i> {{ $car->created_at->format('M d') }}</span>
+                        <span><i class="bi bi-person-circle me-1"></i> {{ __('site.Seller') }}</span>
                     </div>
                 </div>
 
@@ -322,8 +361,8 @@
 
 </div>
 
-<!-- 6. TRUST BANNER (Static) -->
-<div class="bg-light py-5 mt-5">
+<!-- 6. TRUST BANNER -->
+<div class="bg-light py-5 mt-5 border-top">
     <div class="container">
         <div class="row text-center g-4">
             <div class="col-md-4">

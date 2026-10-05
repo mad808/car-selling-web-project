@@ -19,9 +19,18 @@ return new class extends Migration
             $table->string('model');
             $table->integer('year');
             $table->decimal('price', 12, 2);
+            $table->integer('mileage')->default(0);
+            $table->string('fuel_type')->nullable();
+            $table->string('transmission')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->boolean('is_sold')->default(false);
+
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->text('admin_note')->nullable();
+            $table->text('ai_review')->nullable();
+            $table->string('ai_verdict')->nullable();
+
             $table->timestamps();
         });
     }

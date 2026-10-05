@@ -11,14 +11,28 @@ class Car extends Model
 
     protected $fillable = [
         'user_id',
-        'title',
         'brand_id',
+        'title',
         'model',
         'year',
         'price',
+        'mileage',
+        'fuel_type',
+        'transmission',
         'description',
         'image',
-        'is_sold'
+        'is_sold',
+        'status',
+        'admin_note',
+        'ai_review',
+        'ai_verdict',
+    ];
+
+    protected $casts = [
+        'is_sold' => 'boolean',
+        'year'    => 'integer',
+        'mileage' => 'integer',
+        'price'   => 'decimal:2',
     ];
 
     public function user()
@@ -29,5 +43,20 @@ class Car extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'approved')->where('is_sold', false);
+    }
+
+    public function scopePending($query)
+    {
+        return $query->where('status', 'pending');
+    }
+
+    public function scopeRejected($query)
+    {
+        return $query->where('status', 'rejected');
     }
 }

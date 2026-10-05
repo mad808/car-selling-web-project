@@ -165,6 +165,10 @@
                     <i class="bi bi-tags-fill"></i> {{ __('site.Brands') }}
                 </a>
 
+                <a href="{{ route('admin.cars.index') }}" class="list-group-item list-group-item-action {{ request()->routeIs('admin.cars.*') ? 'active' : '' }}">
+                    <i class="bi bi-car-fill"></i> {{ __('site.Cars') }}
+                </a>
+
                 <!-- Spacer -->
                 <div class="mt-4"></div>
                 <small class="text-uppercase fw-bold px-4 mb-2" style="font-size: 0.7rem; color: #64748b;">{{ __('site.System') }}</small>
