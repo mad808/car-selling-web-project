@@ -14,8 +14,8 @@
 
     <style>
         :root {
-            --primary-color: #0d6efd;
-            --primary-hover: #0b5ed7;
+            --primary-color: #f0f3f7;
+            --primary-hover: #b2bfd3;
             --dark-color: #1a1d20;
         }
 
@@ -28,7 +28,7 @@
 
         /* Navbar Styling */
         .navbar-custom {
-            background-color: rgba(255, 255, 255, 0.96);
+            background: linear-gradient(180deg, #0954a0 0%, #62a2e2 100%);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
@@ -44,7 +44,7 @@
         .nav-link {
             font-weight: 600;
             font-size: 0.92rem;
-            color: #495057 !important;
+            color: #b0b0b1 !important;
             transition: color 0.15s ease;
         }
 
